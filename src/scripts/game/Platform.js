@@ -1,5 +1,6 @@
 import * as PIXI from "pixi.js";
 import { App } from '../system/App';
+import * as Matter from 'matter-js';
 
 export class Platform {
     constructor(rows, cols, x) {
