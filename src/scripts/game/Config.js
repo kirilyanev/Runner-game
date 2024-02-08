@@ -24,8 +24,9 @@ export const Config = {
         position: {
             x: 350,
             y: 250
-        }
-
+        },
+        jumpSpeed: 15,
+        maxJumps: 2,
     },
     loader: Tools.massiveRequire(require["context"]('./../../sprites/', true, /\.(mp3|png|jpe?g)$/)),
     scenes: {
