@@ -21,6 +21,11 @@ export class Game extends Scene {
         const colliders = [event.pairs[0].bodyA, event.pairs[0].bodyB];
         const hero = colliders.find(body => body.gameHero);
         const platform = colliders.find(body => body.gamePlatform);
+        const diamond = colliders.find(body => body.gameDiamond);
+
+        if (hero && diamond) {
+            this.hero.collectDiamond(diamond.gameDiamond);
+        }
 
         if (hero && platform) {
             this.hero.stayOnPlatform(platform.gamePlatform);
