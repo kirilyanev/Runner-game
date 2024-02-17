@@ -2,7 +2,7 @@ import { Game } from "./Game";
 import { Tools } from "../system/Tools";
 
 export const Config = {
-    bgSpeed: 2,
+    bgSpeed: 1,
     platforms: {
         moveSpeed: -1.5,
         ranges: {
