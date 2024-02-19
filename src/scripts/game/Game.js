@@ -3,6 +3,7 @@ import { App } from "../system/App";
 import { Scene } from "../system/Scene";
 import { Background } from "./Background.js";
 import { Hero } from "./Hero.js";
+import { LabelScore } from "./LabelScore.js";
 import { Platforms } from "./Platforms.js";
 
 export class Game extends Scene {
@@ -11,6 +12,15 @@ export class Game extends Scene {
         this.createHero();
         this.createPlatforms();
         this.setEvents();
+        this.createUI();
+    }
+
+    createUI() {
+        this.labelScore = new LabelScore();
+        this.container.addChild(this.labelScore);
+        this.hero.sprite.on("score", () => {
+            this.labelScore.renderScore(this.hero.score);
+        })
     }
 
     setEvents() {
