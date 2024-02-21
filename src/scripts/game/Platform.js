@@ -77,4 +77,10 @@ export class Platform {
             this.container.y = this.body.position.y - this.height / 2;
         }
     }
+
+    destroy() {
+        Matter.World.remove(App.physics.world, this.body);
+        this.diamonds.forEach(diamond => diamond.destroy());
+        this.container.destroy();
+    }
 }
